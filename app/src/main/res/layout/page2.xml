@@ -4,5 +4,49 @@
     android:layout_height="match_parent"
     android:background="#0f0"
     >
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:persistentDrawingCache="animation"
+        android:flipInterval="500"
+        android:inAnimation="@anim/updown_show"
+        android:outAnimation="@anim/updown_hide"
+        >
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ball1"
+                />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ball2"
+                />
 
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ball3"
+                />
+
+        </FrameLayout>
+    </ViewFlipper>
+    
+    
+    
 </LinearLayout>
