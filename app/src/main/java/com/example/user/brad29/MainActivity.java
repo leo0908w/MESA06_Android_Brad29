@@ -1,5 +1,6 @@
 package com.example.user.brad29;
 
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 flipper.showNext();
+                gotoTestPage();
             }
         });
         f2.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +75,12 @@ public class MainActivity extends AppCompatActivity {
         pager.setAdapter(new MyPagerAdapter());
         pager.setOnPageChangeListener(new MyPageChangeListener());
         pager.setCurrentItem(1);
+
+    }
+
+    private void gotoTestPage(){
+        Intent it = new Intent(this, TestActivity.class);
+        startActivity(it);
 
     }
 
