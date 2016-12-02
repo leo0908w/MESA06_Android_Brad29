@@ -1,5 +1,6 @@
 package com.example.user.brad29;
 
+import android.database.DataSetObserver;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +8,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager pager;
@@ -28,12 +34,29 @@ public class MainActivity extends AppCompatActivity {
         views = new ArrayList<>();
         LayoutInflater inflater = LayoutInflater.from(this);
 
+        View page0 = inflater.inflate(R.layout.page0,null);
         View page1 = inflater.inflate(R.layout.page1,null);
         View page2 = inflater.inflate(R.layout.page2,null);
         View page3 = inflater.inflate(R.layout.page3,null);
+        View page4 = inflater.inflate(R.layout.page4,null);
+        views.add(page0);
         views.add(page1);views.add(page2);views.add(page3);
+        views.add(page4);
 
         pager.setAdapter(new MyPagerAdapter());
+        pager.setCurrentItem(1);
+
+
+//        ListView lv = new ListView(this);
+//        LinkedList<HashMap<String,String>> data = new LinkedList<>();
+//        HashMap<String,String> ok = new HashMap<>();
+//        ok.put("key1", "value1");
+//        ok.put("key2", "value2");
+//        ok.put("key3", "value3"); // 不存在畫面中
+//        data.add(ok);
+//        SimpleAdapter adapter = new SimpleAdapter(this,ok,);
+//
+//        lv.setAdapter();
 
     }
 
