@@ -5,6 +5,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,12 +65,18 @@ public class MainActivity extends AppCompatActivity {
     private class MyPageChangeListener extends ViewPager.SimpleOnPageChangeListener {
         @Override
         public void onPageSelected(int position) {
-            super.onPageSelected(position);
+            //super.onPageSelected(position);
+            if (position == 0){
+                pager.setCurrentItem(1);
+            }else if (position == 4){
+                pager.setCurrentItem(3);
+            }
         }
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            //super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            Log.v("brad", "pos:" + position);
         }
     }
 
