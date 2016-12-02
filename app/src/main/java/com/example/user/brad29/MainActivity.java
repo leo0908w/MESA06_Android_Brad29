@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         views.add(page4);
 
         pager.setAdapter(new MyPagerAdapter());
+        pager.setOnPageChangeListener(new MyPageChangeListener());
         pager.setCurrentItem(1);
 
 
@@ -58,6 +59,18 @@ public class MainActivity extends AppCompatActivity {
 //
 //        lv.setAdapter();
 
+    }
+
+    private class MyPageChangeListener extends ViewPager.SimpleOnPageChangeListener {
+        @Override
+        public void onPageSelected(int position) {
+            super.onPageSelected(position);
+        }
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+        }
     }
 
     private class MyPagerAdapter extends PagerAdapter {
